@@ -41,12 +41,12 @@ let g:cursorholdmark_time = 4000
 ```
 
 
-## events
+## Event
 
 `CursorHoldMarked` event will be emitted after marking.
 
 
-## LICENSE
+## License
 
 This plugin is licensed MIT, see [LICENSE](LICENSE).
 
