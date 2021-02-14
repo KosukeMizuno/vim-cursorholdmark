@@ -27,10 +27,15 @@ set cpo&vim
 
 
 function! cursorholdmark#start_timer() abort
+  call cursorholdmark#stop_timer()
+  let s:timer_id = timer_start(g:cursorholdmark_time, 'cursorholdmark#marking')
+endfunction
+
+function! cursorholdmark#stop_timer() abort
   if exists('s:timer_id')
     call timer_stop(s:timer_id)
+    unlet! s:timer_id
   endif
-  let s:timer_id = timer_start(g:cursorholdmark_time, 'cursorholdmark#marking')
 endfunction
 
 function! cursorholdmark#marking(id) abort
@@ -38,7 +43,7 @@ function! cursorholdmark#marking(id) abort
     execute 'normal! m'..g:cursorholdmark_mark
     doautocmd User CursorHoldMarked
   endif
-  unlet s:timer_id
+  unlet! s:timer_id
 endfunction
 
 function! cursorholdmark#nop()
