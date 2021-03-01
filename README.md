@@ -8,7 +8,10 @@ Default behavior: The cursor position is marked `a` 4 seconds after the last key
 
 ## Requirements
 
-TBW
+`timer` is required.
+
+- nvim > v0.1.5
+- vim > v7.4
 
 
 ## Installation
