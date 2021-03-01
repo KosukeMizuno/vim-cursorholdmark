@@ -40,7 +40,7 @@ endif
 augroup CursorHoldMarkGroup
   autocmd!
   autocmd CursorMoved * call cursorholdmark#start_timer()
-  autocmd CmdwinEnter,CmdlineEnter,BufLeave * call cursorholdmark#stop_timer()
+  autocmd CmdwinEnter,CmdlineEnter,BufLeave,InsertEnter * call cursorholdmark#stop_timer()
   autocmd User CursorHoldMarked call cursorholdmark#nop()
 augroup END
 

@@ -39,7 +39,7 @@ function! cursorholdmark#stop_timer() abort
 endfunction
 
 function! cursorholdmark#marking(id) abort
-  if &buftype == ''
+  if &buftype == '' && mode(1) == 'n'
     execute 'normal! m'..g:cursorholdmark_mark
     doautocmd User CursorHoldMarked
   endif
